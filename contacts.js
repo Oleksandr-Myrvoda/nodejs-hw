@@ -13,7 +13,7 @@ async function listContacts() {
     return console.table(dataContacts);
   } catch (error) {
     error.message = "listContacts error";
-    throw error;
+    throw new Error(error.message);
   }
 }
 
@@ -28,7 +28,7 @@ async function getContactById(contactId) {
     return console.table(requiredContact);
   } catch (error) {
     error.message = "getContactById error";
-    throw error;
+    throw new Error(error.message);
   }
 }
 
@@ -45,7 +45,7 @@ async function removeContact(contactId) {
     return console.log(`Contact with ID: ${contactId} is deleted!`);
   } catch (error) {
     error.message = "removeContact error";
-    throw error;
+    throw new Error(error.message);
   }
 }
 
@@ -61,7 +61,7 @@ async function addContact(name, email, phone) {
     return console.log(`New contact ${name} added!`);
   } catch (error) {
     error.message = "addContact error";
-    throw error;
+    throw new Error(error.message);
   }
 }
 
